@@ -46,12 +46,57 @@ query ListAdsHome(
           name
         }
       }
-      images{
-          items {
-              file {
-                  key
-              }
+      images {
+        items {
+          file {
+            key
           }
+        }
+      }
+    }
+  }
+}
+query GetAdvertisementsPic($id: ID!) {
+  getAdvertisements(id: $id) {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+      }
+    }
+    category {
+      items {
+        name
+      }
+    }
+    mode {
+      items {
+        name
+      }
+    }
+    owner
+    images {
+      items {
+        file {
+          key
+        }
       }
     }
   }

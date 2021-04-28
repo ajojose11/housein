@@ -43,7 +43,10 @@ export class PostAdComponent implements OnInit, OnDestroy {
     this.user.currentUser().then((res) => {
       this.userDetails = res;
       this.api.GetUser(this.userDetails.username).then((value) => {
-        this.userDetails = value;
+        if (value == null) {
+          this.user.createUser(this.userDetails);
+          this.userDetails.id = this.userDetails.username;
+        } else this.userDetails = value;
       });
     });
     this.api.ListCategorys().then((res) => {
@@ -76,7 +79,7 @@ export class PostAdComponent implements OnInit, OnDestroy {
   }
   onSubmit() {
     let query: CreateAdvertisementsInput = {
-      // userID: this.userDetails.id,
+      userID: this.userDetails?.id,
       categoryID: this.categoryID,
       modeID: this.modeID,
       price: this.price,
@@ -89,8 +92,8 @@ export class PostAdComponent implements OnInit, OnDestroy {
       createdTime: new Date(),
     };
     this.api.CreateAdvertisements(query).then((res) => {
-      // this.router.navigate(['home']);
       this.uploadToStorage(res.id);
+      this.router.navigate(['home']);
     });
   }
   onImageAdd(event: any) {
@@ -116,7 +119,7 @@ export class PostAdComponent implements OnInit, OnDestroy {
           file: {
             bucket: awsconfig.aws_user_files_s3_bucket,
             region: awsconfig.aws_user_files_s3_bucket_region,
-            key: '/public/' + image.name,
+            key: image.name,
           },
         };
         this.uploadToDB(s3Object);

@@ -8,6 +8,8 @@ import { PostAdComponent } from './post-ad/post-ad.component';
 import { AdDetailsComponent } from './ad-details/ad-details.component';
 import { SearchComponent } from './search/search.component';
 import { CategoryComponent } from './category/category.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './profile/user/user.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,6 +17,15 @@ const routes: Routes = [
   { path: 'ads/:id', component: AdDetailsComponent },
   { path: 'search/:param', component: SearchComponent },
   { path: 'category/:param', component: CategoryComponent },
+  // {
+  //   path: 'profile',
+  //   component: ProfileComponent,
+  //   canActivate: [AuthGuardGuard],
+  //   children: [
+  //     { path: '', pathMatch: 'full', redirectTo: 'user' },
+  //     { path: 'user', component: UserComponent },
+  //   ],
+  // },
   { path: 'post', component: PostAdComponent, canActivate: [AuthGuardGuard] },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' },

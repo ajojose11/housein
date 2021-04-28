@@ -1,22 +1,22 @@
 /* tslint:disable */
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
-import { Injectable } from "@angular/core";
-import API, { graphqlOperation, GraphQLResult } from "@aws-amplify/api-graphql";
-import { Observable } from "zen-observable-ts";
+import { Injectable } from '@angular/core';
+import API, { graphqlOperation, GraphQLResult } from '@aws-amplify/api-graphql';
+import { Observable } from 'zen-observable-ts';
 
 export interface SubscriptionResponse<T> {
   value: GraphQLResult<T>;
 }
 
 export type ModelCategoryConnection = {
-  __typename: "ModelCategoryConnection";
+  __typename: 'ModelCategoryConnection';
   items?: Array<Category | null> | null;
   nextToken?: string | null;
 };
 
 export type Category = {
-  __typename: "Category";
+  __typename: 'Category';
   id?: string;
   name?: string | null;
   createdAt?: string;
@@ -26,13 +26,13 @@ export type Category = {
 };
 
 export type ModelAdvertisementsConnection = {
-  __typename: "ModelAdvertisementsConnection";
+  __typename: 'ModelAdvertisementsConnection';
   items?: Array<Advertisements | null> | null;
   nextToken?: string | null;
 };
 
 export type Advertisements = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id?: string;
   title?: string | null;
   description?: string | null;
@@ -55,13 +55,13 @@ export type Advertisements = {
 };
 
 export type ModelUserConnection = {
-  __typename: "ModelUserConnection";
+  __typename: 'ModelUserConnection';
   items?: Array<User | null> | null;
   nextToken?: string | null;
 };
 
 export type User = {
-  __typename: "User";
+  __typename: 'User';
   id?: string;
   name?: string | null;
   email?: string | null;
@@ -75,13 +75,13 @@ export type User = {
 };
 
 export type ModelProfilePictureConnection = {
-  __typename: "ModelProfilePictureConnection";
+  __typename: 'ModelProfilePictureConnection';
   items?: Array<ProfilePicture | null> | null;
   nextToken?: string | null;
 };
 
 export type ProfilePicture = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id?: string;
   name?: string | null;
   userID?: string | null;
@@ -93,20 +93,20 @@ export type ProfilePicture = {
 };
 
 export type S3Object = {
-  __typename: "S3Object";
+  __typename: 'S3Object';
   bucket?: string;
   region?: string;
   key?: string;
 };
 
 export type ModelModeConnection = {
-  __typename: "ModelModeConnection";
+  __typename: 'ModelModeConnection';
   items?: Array<Mode | null> | null;
   nextToken?: string | null;
 };
 
 export type Mode = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id?: string;
   name?: string | null;
   createdAt?: string;
@@ -116,13 +116,13 @@ export type Mode = {
 };
 
 export type ModelPictureConnection = {
-  __typename: "ModelPictureConnection";
+  __typename: 'ModelPictureConnection';
   items?: Array<Picture | null> | null;
   nextToken?: string | null;
 };
 
 export type Picture = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id?: string;
   name?: string | null;
   adID?: string | null;
@@ -146,6 +146,7 @@ export type ModelAdvertisementsFilterInput = {
   price?: ModelStringInput | null;
   modeID?: ModelIDInput | null;
   createdTime?: ModelStringInput | null;
+  searchField?: ModelStringInput | null;
   and?: Array<ModelAdvertisementsFilterInput | null> | null;
   or?: Array<ModelAdvertisementsFilterInput | null> | null;
   not?: ModelAdvertisementsFilterInput | null;
@@ -168,16 +169,16 @@ export type ModelIDInput = {
 };
 
 export enum ModelAttributeTypes {
-  binary = "binary",
-  binarySet = "binarySet",
-  bool = "bool",
-  list = "list",
-  map = "map",
-  number = "number",
-  numberSet = "numberSet",
-  string = "string",
-  stringSet = "stringSet",
-  _null = "_null"
+  binary = 'binary',
+  binarySet = 'binarySet',
+  bool = 'bool',
+  list = 'list',
+  map = 'map',
+  number = 'number',
+  numberSet = 'numberSet',
+  string = 'string',
+  stringSet = 'stringSet',
+  _null = '_null',
 }
 
 export type ModelSizeInput = {
@@ -433,15 +434,15 @@ export type ModelProfilePictureFilterInput = {
 };
 
 export type ListCategoryIDQuery = {
-  __typename: "ModelCategoryConnection";
+  __typename: 'ModelCategoryConnection';
   items?: Array<{
-    __typename: "Category";
+    __typename: 'Category';
     id: string;
     name?: string | null;
     ads?: {
-      __typename: "ModelAdvertisementsConnection";
+      __typename: 'ModelAdvertisementsConnection';
       items?: Array<{
-        __typename: "Advertisements";
+        __typename: 'Advertisements';
         title?: string | null;
       } | null> | null;
     } | null;
@@ -449,9 +450,9 @@ export type ListCategoryIDQuery = {
 };
 
 export type ListAdsHomeQuery = {
-  __typename: "ModelAdvertisementsConnection";
+  __typename: 'ModelAdvertisementsConnection';
   items?: Array<{
-    __typename: "Advertisements";
+    __typename: 'Advertisements';
     id: string;
     title?: string | null;
     description?: string | null;
@@ -466,32 +467,32 @@ export type ListAdsHomeQuery = {
     createdAt: string;
     updatedAt: string;
     user?: {
-      __typename: "ModelUserConnection";
+      __typename: 'ModelUserConnection';
       items?: Array<{
-        __typename: "User";
+        __typename: 'User';
         name?: string | null;
       } | null> | null;
     } | null;
     category?: {
-      __typename: "ModelCategoryConnection";
+      __typename: 'ModelCategoryConnection';
       items?: Array<{
-        __typename: "Category";
+        __typename: 'Category';
         name?: string | null;
       } | null> | null;
     } | null;
     mode?: {
-      __typename: "ModelModeConnection";
+      __typename: 'ModelModeConnection';
       items?: Array<{
-        __typename: "Mode";
+        __typename: 'Mode';
         name?: string | null;
       } | null> | null;
     } | null;
     images?: {
-      __typename: "ModelPictureConnection";
+      __typename: 'ModelPictureConnection';
       items?: Array<{
-        __typename: "Picture";
+        __typename: 'Picture';
         file?: {
-          __typename: "S3Object";
+          __typename: 'S3Object';
           key: string;
         } | null;
       } | null> | null;
@@ -499,8 +500,62 @@ export type ListAdsHomeQuery = {
   } | null> | null;
 };
 
+export type GetAdvertisementsPicQuery = {
+  __typename: 'Advertisements';
+  id: string;
+  title?: string | null;
+  description?: string | null;
+  categoryID?: string | null;
+  userID?: string | null;
+  country?: string | null;
+  state?: string | null;
+  city?: string | null;
+  phone?: string | null;
+  price?: string | null;
+  modeID?: string | null;
+  createdTime: string;
+  createdAt: string;
+  updatedAt: string;
+  user?: {
+    __typename: 'ModelUserConnection';
+    items?: Array<{
+      __typename: 'User';
+      id: string;
+      name?: string | null;
+      email?: string | null;
+      address?: string | null;
+      phone?: string | null;
+    } | null> | null;
+  } | null;
+  category?: {
+    __typename: 'ModelCategoryConnection';
+    items?: Array<{
+      __typename: 'Category';
+      name?: string | null;
+    } | null> | null;
+  } | null;
+  mode?: {
+    __typename: 'ModelModeConnection';
+    items?: Array<{
+      __typename: 'Mode';
+      name?: string | null;
+    } | null> | null;
+  } | null;
+  owner?: string | null;
+  images?: {
+    __typename: 'ModelPictureConnection';
+    items?: Array<{
+      __typename: 'Picture';
+      file?: {
+        __typename: 'S3Object';
+        key: string;
+      } | null;
+    } | null> | null;
+  } | null;
+};
+
 export type CreateUserMutation = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -510,9 +565,9 @@ export type CreateUserMutation = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -532,9 +587,9 @@ export type CreateUserMutation = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -547,7 +602,7 @@ export type CreateUserMutation = {
 };
 
 export type UpdateUserMutation = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -557,9 +612,9 @@ export type UpdateUserMutation = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -579,9 +634,9 @@ export type UpdateUserMutation = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -594,7 +649,7 @@ export type UpdateUserMutation = {
 };
 
 export type DeleteUserMutation = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -604,9 +659,9 @@ export type DeleteUserMutation = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -626,9 +681,9 @@ export type DeleteUserMutation = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -641,16 +696,16 @@ export type DeleteUserMutation = {
 };
 
 export type CreateCategoryMutation = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -672,16 +727,16 @@ export type CreateCategoryMutation = {
 };
 
 export type UpdateCategoryMutation = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -703,16 +758,16 @@ export type UpdateCategoryMutation = {
 };
 
 export type DeleteCategoryMutation = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -734,16 +789,16 @@ export type DeleteCategoryMutation = {
 };
 
 export type CreateModeMutation = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -765,16 +820,16 @@ export type CreateModeMutation = {
 };
 
 export type UpdateModeMutation = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -796,16 +851,16 @@ export type UpdateModeMutation = {
 };
 
 export type DeleteModeMutation = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -827,7 +882,7 @@ export type DeleteModeMutation = {
 };
 
 export type CreateAdvertisementsMutation = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -843,9 +898,9 @@ export type CreateAdvertisementsMutation = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -858,9 +913,9 @@ export type CreateAdvertisementsMutation = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -870,9 +925,9 @@ export type CreateAdvertisementsMutation = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -883,9 +938,9 @@ export type CreateAdvertisementsMutation = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -898,7 +953,7 @@ export type CreateAdvertisementsMutation = {
 };
 
 export type UpdateAdvertisementsMutation = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -914,9 +969,9 @@ export type UpdateAdvertisementsMutation = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -929,9 +984,9 @@ export type UpdateAdvertisementsMutation = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -941,9 +996,9 @@ export type UpdateAdvertisementsMutation = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -954,9 +1009,9 @@ export type UpdateAdvertisementsMutation = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -969,7 +1024,7 @@ export type UpdateAdvertisementsMutation = {
 };
 
 export type DeleteAdvertisementsMutation = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -985,9 +1040,9 @@ export type DeleteAdvertisementsMutation = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1000,9 +1055,9 @@ export type DeleteAdvertisementsMutation = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -1012,9 +1067,9 @@ export type DeleteAdvertisementsMutation = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -1025,9 +1080,9 @@ export type DeleteAdvertisementsMutation = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -1040,12 +1095,12 @@ export type DeleteAdvertisementsMutation = {
 };
 
 export type CreatePictureMutation = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1053,9 +1108,9 @@ export type CreatePictureMutation = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1078,12 +1133,12 @@ export type CreatePictureMutation = {
 };
 
 export type UpdatePictureMutation = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1091,9 +1146,9 @@ export type UpdatePictureMutation = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1116,12 +1171,12 @@ export type UpdatePictureMutation = {
 };
 
 export type DeletePictureMutation = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1129,9 +1184,9 @@ export type DeletePictureMutation = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1154,12 +1209,12 @@ export type DeletePictureMutation = {
 };
 
 export type CreateProfilePictureMutation = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1167,9 +1222,9 @@ export type CreateProfilePictureMutation = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1185,12 +1240,12 @@ export type CreateProfilePictureMutation = {
 };
 
 export type UpdateProfilePictureMutation = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1198,9 +1253,9 @@ export type UpdateProfilePictureMutation = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1216,12 +1271,12 @@ export type UpdateProfilePictureMutation = {
 };
 
 export type DeleteProfilePictureMutation = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1229,9 +1284,9 @@ export type DeleteProfilePictureMutation = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1247,7 +1302,7 @@ export type DeleteProfilePictureMutation = {
 };
 
 export type GetUserQuery = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -1257,9 +1312,9 @@ export type GetUserQuery = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1279,9 +1334,9 @@ export type GetUserQuery = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -1294,9 +1349,9 @@ export type GetUserQuery = {
 };
 
 export type ListUsersQuery = {
-  __typename: "ModelUserConnection";
+  __typename: 'ModelUserConnection';
   items?: Array<{
-    __typename: "User";
+    __typename: 'User';
     id: string;
     name?: string | null;
     email?: string | null;
@@ -1306,11 +1361,11 @@ export type ListUsersQuery = {
     updatedAt: string;
     owner?: string | null;
     ads?: {
-      __typename: "ModelAdvertisementsConnection";
+      __typename: 'ModelAdvertisementsConnection';
       nextToken?: string | null;
     } | null;
     profileImage?: {
-      __typename: "ModelProfilePictureConnection";
+      __typename: 'ModelProfilePictureConnection';
       nextToken?: string | null;
     } | null;
   } | null> | null;
@@ -1318,16 +1373,16 @@ export type ListUsersQuery = {
 };
 
 export type GetCategoryQuery = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1349,16 +1404,16 @@ export type GetCategoryQuery = {
 };
 
 export type ListCategorysQuery = {
-  __typename: "ModelCategoryConnection";
+  __typename: 'ModelCategoryConnection';
   items?: Array<{
-    __typename: "Category";
+    __typename: 'Category';
     id: string;
     name?: string | null;
     createdAt: string;
     updatedAt: string;
     owner?: string | null;
     ads?: {
-      __typename: "ModelAdvertisementsConnection";
+      __typename: 'ModelAdvertisementsConnection';
       nextToken?: string | null;
     } | null;
   } | null> | null;
@@ -1366,16 +1421,16 @@ export type ListCategorysQuery = {
 };
 
 export type GetModeQuery = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1397,16 +1452,16 @@ export type GetModeQuery = {
 };
 
 export type ListModesQuery = {
-  __typename: "ModelModeConnection";
+  __typename: 'ModelModeConnection';
   items?: Array<{
-    __typename: "Mode";
+    __typename: 'Mode';
     id: string;
     name?: string | null;
     createdAt: string;
     updatedAt: string;
     owner?: string | null;
     ads?: {
-      __typename: "ModelAdvertisementsConnection";
+      __typename: 'ModelAdvertisementsConnection';
       nextToken?: string | null;
     } | null;
   } | null> | null;
@@ -1414,7 +1469,7 @@ export type ListModesQuery = {
 };
 
 export type GetAdvertisementsQuery = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -1430,9 +1485,9 @@ export type GetAdvertisementsQuery = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1445,9 +1500,9 @@ export type GetAdvertisementsQuery = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -1457,9 +1512,9 @@ export type GetAdvertisementsQuery = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -1470,9 +1525,9 @@ export type GetAdvertisementsQuery = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -1485,9 +1540,9 @@ export type GetAdvertisementsQuery = {
 };
 
 export type ListAdvertisementssQuery = {
-  __typename: "ModelAdvertisementsConnection";
+  __typename: 'ModelAdvertisementsConnection';
   items?: Array<{
-    __typename: "Advertisements";
+    __typename: 'Advertisements';
     id: string;
     title?: string | null;
     description?: string | null;
@@ -1503,20 +1558,20 @@ export type ListAdvertisementssQuery = {
     createdAt: string;
     updatedAt: string;
     user?: {
-      __typename: "ModelUserConnection";
+      __typename: 'ModelUserConnection';
       nextToken?: string | null;
     } | null;
     category?: {
-      __typename: "ModelCategoryConnection";
+      __typename: 'ModelCategoryConnection';
       nextToken?: string | null;
     } | null;
     mode?: {
-      __typename: "ModelModeConnection";
+      __typename: 'ModelModeConnection';
       nextToken?: string | null;
     } | null;
     owner?: string | null;
     images?: {
-      __typename: "ModelPictureConnection";
+      __typename: 'ModelPictureConnection';
       nextToken?: string | null;
     } | null;
   } | null> | null;
@@ -1524,12 +1579,12 @@ export type ListAdvertisementssQuery = {
 };
 
 export type GetPictureQuery = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1537,9 +1592,9 @@ export type GetPictureQuery = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1562,14 +1617,14 @@ export type GetPictureQuery = {
 };
 
 export type ListPicturesQuery = {
-  __typename: "ModelPictureConnection";
+  __typename: 'ModelPictureConnection';
   items?: Array<{
-    __typename: "Picture";
+    __typename: 'Picture';
     id: string;
     name?: string | null;
     adID?: string | null;
     file?: {
-      __typename: "S3Object";
+      __typename: 'S3Object';
       bucket: string;
       region: string;
       key: string;
@@ -1577,7 +1632,7 @@ export type ListPicturesQuery = {
     createdAt: string;
     updatedAt: string;
     ad?: {
-      __typename: "ModelAdvertisementsConnection";
+      __typename: 'ModelAdvertisementsConnection';
       nextToken?: string | null;
     } | null;
     owner?: string | null;
@@ -1586,12 +1641,12 @@ export type ListPicturesQuery = {
 };
 
 export type GetProfilePictureQuery = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -1599,9 +1654,9 @@ export type GetProfilePictureQuery = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1617,14 +1672,14 @@ export type GetProfilePictureQuery = {
 };
 
 export type ListProfilePicturesQuery = {
-  __typename: "ModelProfilePictureConnection";
+  __typename: 'ModelProfilePictureConnection';
   items?: Array<{
-    __typename: "ProfilePicture";
+    __typename: 'ProfilePicture';
     id: string;
     name?: string | null;
     userID?: string | null;
     file?: {
-      __typename: "S3Object";
+      __typename: 'S3Object';
       bucket: string;
       region: string;
       key: string;
@@ -1632,7 +1687,7 @@ export type ListProfilePicturesQuery = {
     createdAt: string;
     updatedAt: string;
     user?: {
-      __typename: "ModelUserConnection";
+      __typename: 'ModelUserConnection';
       nextToken?: string | null;
     } | null;
     owner?: string | null;
@@ -1641,7 +1696,7 @@ export type ListProfilePicturesQuery = {
 };
 
 export type OnCreateUserSubscription = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -1651,9 +1706,9 @@ export type OnCreateUserSubscription = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1673,9 +1728,9 @@ export type OnCreateUserSubscription = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -1688,7 +1743,7 @@ export type OnCreateUserSubscription = {
 };
 
 export type OnUpdateUserSubscription = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -1698,9 +1753,9 @@ export type OnUpdateUserSubscription = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1720,9 +1775,9 @@ export type OnUpdateUserSubscription = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -1735,7 +1790,7 @@ export type OnUpdateUserSubscription = {
 };
 
 export type OnDeleteUserSubscription = {
-  __typename: "User";
+  __typename: 'User';
   id: string;
   name?: string | null;
   email?: string | null;
@@ -1745,9 +1800,9 @@ export type OnDeleteUserSubscription = {
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1767,9 +1822,9 @@ export type OnDeleteUserSubscription = {
     nextToken?: string | null;
   } | null;
   profileImage?: {
-    __typename: "ModelProfilePictureConnection";
+    __typename: 'ModelProfilePictureConnection';
     items?: Array<{
-      __typename: "ProfilePicture";
+      __typename: 'ProfilePicture';
       id: string;
       name?: string | null;
       userID?: string | null;
@@ -1782,16 +1837,16 @@ export type OnDeleteUserSubscription = {
 };
 
 export type OnCreateCategorySubscription = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1813,16 +1868,16 @@ export type OnCreateCategorySubscription = {
 };
 
 export type OnUpdateCategorySubscription = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1844,16 +1899,16 @@ export type OnUpdateCategorySubscription = {
 };
 
 export type OnDeleteCategorySubscription = {
-  __typename: "Category";
+  __typename: 'Category';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1875,16 +1930,16 @@ export type OnDeleteCategorySubscription = {
 };
 
 export type OnCreateModeSubscription = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1906,16 +1961,16 @@ export type OnCreateModeSubscription = {
 };
 
 export type OnUpdateModeSubscription = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1937,16 +1992,16 @@ export type OnUpdateModeSubscription = {
 };
 
 export type OnDeleteModeSubscription = {
-  __typename: "Mode";
+  __typename: 'Mode';
   id: string;
   name?: string | null;
   createdAt: string;
   updatedAt: string;
   owner?: string | null;
   ads?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -1968,7 +2023,7 @@ export type OnDeleteModeSubscription = {
 };
 
 export type OnCreateAdvertisementsSubscription = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -1984,9 +2039,9 @@ export type OnCreateAdvertisementsSubscription = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -1999,9 +2054,9 @@ export type OnCreateAdvertisementsSubscription = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -2011,9 +2066,9 @@ export type OnCreateAdvertisementsSubscription = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -2024,9 +2079,9 @@ export type OnCreateAdvertisementsSubscription = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -2039,7 +2094,7 @@ export type OnCreateAdvertisementsSubscription = {
 };
 
 export type OnUpdateAdvertisementsSubscription = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -2055,9 +2110,9 @@ export type OnUpdateAdvertisementsSubscription = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -2070,9 +2125,9 @@ export type OnUpdateAdvertisementsSubscription = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -2082,9 +2137,9 @@ export type OnUpdateAdvertisementsSubscription = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -2095,9 +2150,9 @@ export type OnUpdateAdvertisementsSubscription = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -2110,7 +2165,7 @@ export type OnUpdateAdvertisementsSubscription = {
 };
 
 export type OnDeleteAdvertisementsSubscription = {
-  __typename: "Advertisements";
+  __typename: 'Advertisements';
   id: string;
   title?: string | null;
   description?: string | null;
@@ -2126,9 +2181,9 @@ export type OnDeleteAdvertisementsSubscription = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -2141,9 +2196,9 @@ export type OnDeleteAdvertisementsSubscription = {
     nextToken?: string | null;
   } | null;
   category?: {
-    __typename: "ModelCategoryConnection";
+    __typename: 'ModelCategoryConnection';
     items?: Array<{
-      __typename: "Category";
+      __typename: 'Category';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -2153,9 +2208,9 @@ export type OnDeleteAdvertisementsSubscription = {
     nextToken?: string | null;
   } | null;
   mode?: {
-    __typename: "ModelModeConnection";
+    __typename: 'ModelModeConnection';
     items?: Array<{
-      __typename: "Mode";
+      __typename: 'Mode';
       id: string;
       name?: string | null;
       createdAt: string;
@@ -2166,9 +2221,9 @@ export type OnDeleteAdvertisementsSubscription = {
   } | null;
   owner?: string | null;
   images?: {
-    __typename: "ModelPictureConnection";
+    __typename: 'ModelPictureConnection';
     items?: Array<{
-      __typename: "Picture";
+      __typename: 'Picture';
       id: string;
       name?: string | null;
       adID?: string | null;
@@ -2181,12 +2236,12 @@ export type OnDeleteAdvertisementsSubscription = {
 };
 
 export type OnCreatePictureSubscription = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -2194,9 +2249,9 @@ export type OnCreatePictureSubscription = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -2219,12 +2274,12 @@ export type OnCreatePictureSubscription = {
 };
 
 export type OnUpdatePictureSubscription = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -2232,9 +2287,9 @@ export type OnUpdatePictureSubscription = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -2257,12 +2312,12 @@ export type OnUpdatePictureSubscription = {
 };
 
 export type OnDeletePictureSubscription = {
-  __typename: "Picture";
+  __typename: 'Picture';
   id: string;
   name?: string | null;
   adID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -2270,9 +2325,9 @@ export type OnDeletePictureSubscription = {
   createdAt: string;
   updatedAt: string;
   ad?: {
-    __typename: "ModelAdvertisementsConnection";
+    __typename: 'ModelAdvertisementsConnection';
     items?: Array<{
-      __typename: "Advertisements";
+      __typename: 'Advertisements';
       id: string;
       title?: string | null;
       description?: string | null;
@@ -2295,12 +2350,12 @@ export type OnDeletePictureSubscription = {
 };
 
 export type OnCreateProfilePictureSubscription = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -2308,9 +2363,9 @@ export type OnCreateProfilePictureSubscription = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -2326,12 +2381,12 @@ export type OnCreateProfilePictureSubscription = {
 };
 
 export type OnUpdateProfilePictureSubscription = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -2339,9 +2394,9 @@ export type OnUpdateProfilePictureSubscription = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -2357,12 +2412,12 @@ export type OnUpdateProfilePictureSubscription = {
 };
 
 export type OnDeleteProfilePictureSubscription = {
-  __typename: "ProfilePicture";
+  __typename: 'ProfilePicture';
   id: string;
   name?: string | null;
   userID?: string | null;
   file?: {
-    __typename: "S3Object";
+    __typename: 'S3Object';
     bucket: string;
     region: string;
     key: string;
@@ -2370,9 +2425,9 @@ export type OnDeleteProfilePictureSubscription = {
   createdAt: string;
   updatedAt: string;
   user?: {
-    __typename: "ModelUserConnection";
+    __typename: 'ModelUserConnection';
     items?: Array<{
-      __typename: "User";
+      __typename: 'User';
       id: string;
       name?: string | null;
       email?: string | null;
@@ -2388,7 +2443,7 @@ export type OnDeleteProfilePictureSubscription = {
 };
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class APIService {
   async ListCategoryID(): Promise<ListCategoryIDQuery> {
@@ -2484,6 +2539,70 @@ export class APIService {
     )) as any;
     return <ListAdsHomeQuery>response.data.listAdvertisementss;
   }
+  async GetAdvertisementsPic(id: string): Promise<GetAdvertisementsPicQuery> {
+    const statement = `query GetAdvertisementsPic($id: ID!) {
+        getAdvertisements(id: $id) {
+          __typename
+          id
+          title
+          description
+          categoryID
+          userID
+          country
+          state
+          city
+          phone
+          price
+          modeID
+          createdTime
+          createdAt
+          updatedAt
+          user {
+            __typename
+            items {
+              __typename
+              id
+              name
+              email
+              address
+              phone
+            }
+          }
+          category {
+            __typename
+            items {
+              __typename
+              name
+            }
+          }
+          mode {
+            __typename
+            items {
+              __typename
+              name
+            }
+          }
+          owner
+          images {
+            __typename
+            items {
+              __typename
+              file {
+                __typename
+                key
+              }
+            }
+          }
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id,
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetAdvertisementsPicQuery>response.data.getAdvertisements;
+  }
   async CreateUser(
     input: CreateUserInput,
     condition?: ModelUserConditionInput
@@ -2537,7 +2656,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2600,7 +2719,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2663,7 +2782,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2710,7 +2829,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2757,7 +2876,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2804,7 +2923,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2851,7 +2970,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2898,7 +3017,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -2945,7 +3064,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3032,7 +3151,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3119,7 +3238,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3206,7 +3325,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3260,7 +3379,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3314,7 +3433,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3368,7 +3487,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3415,7 +3534,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3462,7 +3581,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3509,7 +3628,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -3569,7 +3688,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -3655,7 +3774,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -3734,7 +3853,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -3853,7 +3972,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -3961,7 +4080,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -4047,7 +4166,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)

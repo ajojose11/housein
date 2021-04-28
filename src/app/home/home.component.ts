@@ -4,7 +4,7 @@ import { DataService } from '../services/data.service';
 import { UserService } from '../services/user.service';
 import { APIService } from '../services/API.service';
 import { Router } from '@angular/router';
-import { Storage } from 'aws-amplify'
+import { Storage } from 'aws-amplify';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   subscrip: any;
   ads: any;
   param: any;
-  image: any
+  image: any;
   constructor(
     private data: DataService,
     private user: UserService,
@@ -31,17 +31,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.api.ListCategoryID().then((res) => {
       this.category = res.items;
     });
-    this.api.ListUsers().then((res) => {
-      this.users = res.items;
-    });
+    // this.api.ListUsers().then((res) => {
+    //   this.users = res.items;
+    // });
     this.api.ListAdsHome().then((res) => {
       this.ads = res.items;
-      this.ads.forEach((ad:any)=>{
-        console.log(ad.images.items[0]?.file.key);
-      Storage.get(ad.images.items[0]?.file.key).then(res => {
-          console.log(res);
-      })
-      })   });
+      this.ads.forEach((ad: any) => {
+        Storage.get(ad.images.items[0]?.file.key).then((res) => {
+          ad.url = res;
+        });
+      });
+    });
   }
   search() {
     this.router.navigate(['/search', this.param]);

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-// import { UserService } from '../services/user.service';
+import { UserService } from '../services/user.service';
 import { filter } from 'rxjs/operators';
 import {
   Router,
@@ -17,7 +17,11 @@ export class NavbarComponent implements OnInit {
   signedIn = true;
   nav: any;
   currentRoute: any;
-  constructor(private router: Router, private ref: ChangeDetectorRef) {
+  constructor(
+    private router: Router,
+    private ref: ChangeDetectorRef,
+    private user: UserService
+  ) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEvent) => {
@@ -27,15 +31,15 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.user.currentUserData.subscribe(value => {
-    //   if (value) {
-    //     this.signedIn = true;
-    //   } else this.signedIn = false;
-    //   this.ref.detectChanges()
-    // })
+    this.user.currentUserData.subscribe((value) => {
+      if (value) {
+        this.signedIn = true;
+      } else this.signedIn = false;
+      this.ref.detectChanges();
+    });
   }
 
   public signOut() {
-    // this.user.signOut();
+    this.user.signOut();
   }
 }

@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { APIService } from '../services/API.service';
+import { Storage } from 'aws-amplify';
 
 @Component({
   selector: 'app-category',
@@ -18,6 +19,11 @@ export class CategoryComponent implements OnInit {
       let filter = { categoryID: { eq: data.param } };
       this.graphql.ListAdsHome(filter).then((res) => {
         this.ads = res.items;
+        this.ads.forEach((ad: any) => {
+          Storage.get(ad.images.items[0]?.file.key).then((res) => {
+            ad.url = res;
+          });
+        });
       });
     });
   }

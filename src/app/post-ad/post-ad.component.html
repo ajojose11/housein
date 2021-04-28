@@ -1,5 +1,5 @@
 <!-- Page Header Start -->
-<div class="page-header" style="background: url(assets/img/banner1.jpg)">
+<div class="page-header">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -168,17 +168,21 @@
                         (change)="onImageAdd($event)"
                         required
                       />
-                      <br />
                       <div class="container">
                         <div class="row">
                           <div
-                            class="col-sm-5 imgUp"
                             *ngFor="let url of images"
+                            class="responsive item"
                           >
-                            <div
-                              class="imagePreview"
-                              style="background: url({{url}})"
-                            ></div>
+                            <div class="product-img gallery">
+                              <img
+                                class="img-fluid"
+                                [src]="url"
+                                width="600"
+                                height="400"
+                                alt="No Pics"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>

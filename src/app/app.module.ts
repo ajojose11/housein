@@ -22,6 +22,8 @@ import { AdDetailsComponent } from './ad-details/ad-details.component';
 import { SearchComponent } from './search/search.component';
 import { CategoryComponent } from './category/category.component';
 import { OwlModule } from 'ngx-owl-carousel';
+import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './profile/user/user.component';
 
 /* Configure Amplify resources */
 Amplify.configure(awsconfig);
@@ -36,6 +38,8 @@ Amplify.configure(awsconfig);
     AdDetailsComponent,
     SearchComponent,
     CategoryComponent,
+    ProfileComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

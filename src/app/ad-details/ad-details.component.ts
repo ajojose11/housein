@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { APIService } from '../services/API.service';
+import { Storage } from 'aws-amplify';
 
 @Component({
   selector: 'app-ad-details',
@@ -16,9 +17,16 @@ export class AdDetailsComponent implements OnInit {
     private router: Router
   ) {
     this.activatedroute.params.subscribe((data) => {
-      this.graphql.GetAdvertisements(data.id).then(
+      this.graphql.GetAdvertisementsPic(data.id).then(
         (res) => {
           this.ad = res;
+          this.ad.images?.items?.forEach((item: any) => {
+            console.log(item);
+            Storage.get(item.file?.key).then((res) => {
+              console.log(res);
+              item.url = res;
+            });
+          });
         },
         (error) => {
           this.router.navigate(['/home']);
