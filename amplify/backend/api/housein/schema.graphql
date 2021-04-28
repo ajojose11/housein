@@ -1,0 +1,110 @@
+type User
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String
+  email: String
+  address: String
+  phone: String
+  profileImage: [ProfilePicture]
+    @connection(keyName: "byImageUserID", fields: ["id"])
+  ads: [Advertisements] @connection(keyName: "byUser", fields: ["id"])
+}
+type Category
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String
+  ads: [Advertisements] @connection(keyName: "byCategory", fields: ["id"])
+}
+type Mode
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String
+  ads: [Advertisements] @connection(keyName: "byMode", fields: ["id"])
+}
+type Advertisements
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byUser", fields: ["userID"])
+  @key(name: "byCategory", fields: ["categoryID"])
+  @key(name: "byMode", fields: ["modeID"]) {
+  id: ID!
+  title: String
+  description: String
+  categoryID: ID
+  category: [Category] @connection(fields: ["categoryID"])
+  userID: ID
+  user: [User] @connection(fields: ["userID"])
+  country: String
+  state: String
+  city: String
+  phone: String
+  price: String
+  modeID: ID
+  mode: [Mode] @connection(fields: ["modeID"])
+  createdTime: AWSDateTime!
+  images: [Picture] @connection(keyName: "byImageAdID", fields: ["id"])
+}
+type Picture
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byImageAdID", fields: ["adID"]) {
+  id: ID!
+  name: String
+  adID: ID
+  ad: [Advertisements] @connection(fields: ["adID"])
+  file: S3Object
+}
+type ProfilePicture
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byImageUserID", fields: ["userID"]) {
+  id: ID!
+  name: String
+  userID: ID
+  user: [User] @connection(fields: ["userID"])
+  file: S3Object
+}
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}

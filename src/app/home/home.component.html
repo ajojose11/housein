@@ -1,0 +1,156 @@
+<div id="hero-area">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-9 col-xs-12 text-center">
+        <div class="contents">
+          <h1 class="head-title">
+            Welcome to The Largest <span class="year">Service List</span>
+          </h1>
+          <div class="search-bar">
+            <div class="search-inner">
+              <form class="search-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    [(ngModel)]="param"
+                    name="customword"
+                    class="form-control"
+                    placeholder="What are you looking for?"
+                  />
+                </div>
+                <button (click)="search()" class="btn btn-common" type="button">
+                  <i class="lni-search"></i> Search Now
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Categories item Start -->
+<section id="categories" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="heading">
+          <h1 class="section-title">Categories</h1>
+          <!-- <h4 class="sub-title">Find the best places</h4> -->
+        </div>
+      </div>
+
+      <div
+        *ngFor="let cat of category; let i = index"
+        class="col-lg-2 col-md-3 col-xs-12"
+      >
+        <a (click)="goToCategory(cat)">
+          <div class="category-icon-item lis-bg{{i+1}}">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="lni-{{cat.name}}"></i>
+              </div>
+              <h4>{{cat.name}}</h4>
+              <p class="categories-listing">{{cat.ads.items.length}} Listing</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Section Start -->
+<!-- <section class="featured section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="heading">
+          <h1 class="section-title">Featured Advertisements</h1>
+        </div>
+      </div>
+      <div *ngFor="let item of ads" class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+        <div class="featured-box">
+          <div class="content-wrapper">
+            <div class="feature-content">
+              <h4><a>{{item.title}}</a></h4>
+              <p class="listing-tagline">{{item.description}}</p>
+              <div class="meta-tag">
+                <div class="user-name">
+                  <a><i class="lni-user"></i>{{item.user?.items[0]?.name}}</a>
+                </div>
+                <div class="listing-category">
+                  <a
+                    ><i class="lni-display"></i
+                    >{{item.category?.items[0]?.name}}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="listing-bottom clearfix">
+              <a class="float-left"
+                ><i class="lni-map-marker"></i> {{item.city}}, {{item.state}}</a
+              >
+              <a [routerLink]="['/ads', item.id]" class="float-right"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Featured Section End -->
+
+<section class="featured section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="heading">
+          <h1 class="section-title">Featured Advertisements</h1>
+        </div>
+      </div>
+      <div *ngFor="let item of ads" class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+        <div class="featured-box">
+          <figure>
+            <div class="homes-tag featured">{{item.mode?.items[0]?.name}}</div>
+            <!-- <div class="homes-tag rent"><i class="lni-heart"></i> 202</div> -->
+            <span class="price-save"> {{item.price | currency:'EUR'}} </span>
+            <a><img class="img-fluid" [src]="item.url" alt="No Pics" /></a>
+          </figure>
+          <div class="content-wrapper">
+            <div class="feature-content">
+              <h4><a>{{item.title}}</a></h4>
+              <p class="listing-tagline">{{item.description}}</p>
+              <div class="meta-tag">
+                <!-- <div class="listing-review">
+            <span class="review-avg">4.5</span>
+            2 Ratings       
+          </div> -->
+                <div class="user-name">
+                  <a><i class="lni-user"></i> {{item.user?.items[0]?.name}}</a>
+                </div>
+                <div class="listing-category">
+                  <a
+                    ><i class="lni-display"></i
+                    >{{item.category?.items[0]?.name}}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="listing-bottom clearfix">
+              <a class="float-left"
+                ><i class="lni-map-marker"></i> {{item.city}}, {{item.state}}</a
+              >
+              <a [routerLink]="['/ads', item.id]" class="float-right"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

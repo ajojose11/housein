@@ -1,0 +1,736 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    name
+    email
+    address
+    phone
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    profileImage {
+      items {
+        id
+        name
+        userID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    name
+    email
+    address
+    phone
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    profileImage {
+      items {
+        id
+        name
+        userID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    name
+    email
+    address
+    phone
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    profileImage {
+      items {
+        id
+        name
+        userID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateCategory(
+  $input: CreateCategoryInput!
+  $condition: ModelCategoryConditionInput
+) {
+  createCategory(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateCategory(
+  $input: UpdateCategoryInput!
+  $condition: ModelCategoryConditionInput
+) {
+  updateCategory(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteCategory(
+  $input: DeleteCategoryInput!
+  $condition: ModelCategoryConditionInput
+) {
+  deleteCategory(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateMode(
+  $input: CreateModeInput!
+  $condition: ModelModeConditionInput
+) {
+  createMode(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateMode(
+  $input: UpdateModeInput!
+  $condition: ModelModeConditionInput
+) {
+  updateMode(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteMode(
+  $input: DeleteModeInput!
+  $condition: ModelModeConditionInput
+) {
+  deleteMode(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateAdvertisements(
+  $input: CreateAdvertisementsInput!
+  $condition: ModelAdvertisementsConditionInput
+) {
+  createAdvertisements(input: $input, condition: $condition) {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    mode {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+    images {
+      items {
+        id
+        name
+        adID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateAdvertisements(
+  $input: UpdateAdvertisementsInput!
+  $condition: ModelAdvertisementsConditionInput
+) {
+  updateAdvertisements(input: $input, condition: $condition) {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    mode {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+    images {
+      items {
+        id
+        name
+        adID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteAdvertisements(
+  $input: DeleteAdvertisementsInput!
+  $condition: ModelAdvertisementsConditionInput
+) {
+  deleteAdvertisements(input: $input, condition: $condition) {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    mode {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+    images {
+      items {
+        id
+        name
+        adID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+mutation CreatePicture(
+  $input: CreatePictureInput!
+  $condition: ModelPictureConditionInput
+) {
+  createPicture(input: $input, condition: $condition) {
+    id
+    name
+    adID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    ad {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+mutation UpdatePicture(
+  $input: UpdatePictureInput!
+  $condition: ModelPictureConditionInput
+) {
+  updatePicture(input: $input, condition: $condition) {
+    id
+    name
+    adID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    ad {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+mutation DeletePicture(
+  $input: DeletePictureInput!
+  $condition: ModelPictureConditionInput
+) {
+  deletePicture(input: $input, condition: $condition) {
+    id
+    name
+    adID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    ad {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+mutation CreateProfilePicture(
+  $input: CreateProfilePictureInput!
+  $condition: ModelProfilePictureConditionInput
+) {
+  createProfilePicture(input: $input, condition: $condition) {
+    id
+    name
+    userID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+mutation UpdateProfilePicture(
+  $input: UpdateProfilePictureInput!
+  $condition: ModelProfilePictureConditionInput
+) {
+  updateProfilePicture(input: $input, condition: $condition) {
+    id
+    name
+    userID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+mutation DeleteProfilePicture(
+  $input: DeleteProfilePictureInput!
+  $condition: ModelProfilePictureConditionInput
+) {
+  deleteProfilePicture(input: $input, condition: $condition) {
+    id
+    name
+    userID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
