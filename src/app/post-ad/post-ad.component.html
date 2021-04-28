@@ -1,0 +1,202 @@
+<!-- Page Header Start -->
+<div class="page-header" style="background: url(assets/img/banner1.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumb-wrapper">
+          <h2 class="product-title">Post your Advertisement</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+<!-- Start Content -->
+<div id="content" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-12">
+        <div class="row page-content">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+            <div class="inner-box">
+              <div class="dashboard-box">
+                <h2 class="dashbord-title">Ad Details</h2>
+                <p style="text-align: right" class="required">
+                  <label>Required Fields </label>
+                </p>
+              </div>
+              <form (ngSubmit)="onSubmit()" #adForm="ngForm">
+                <div class="dashboard-wrapper">
+                  <div class="form-group mb-3 required">
+                    <label for="" class="control-label">Title</label>
+                    <input
+                      class="form-control input-md"
+                      name="Title"
+                      placeholder=""
+                      [(ngModel)]="title"
+                      #Title="ngModel"
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="control-label">Description</label>
+                    <input
+                      class="form-control input-md"
+                      name="Description"
+                      placeholder=""
+                      [(ngModel)]="description"
+                      type="textarea"
+                    />
+                  </div>
+                  <div class="form-group mb-3 tg-inputwithicon required">
+                    <label class="control-label">Category</label>
+                    <div class="tg-select form-control">
+                      <select name="category" [(ngModel)]="categoryID" required>
+                        <option value="" disabled>Choose your category</option>
+                        <option *ngFor="let cat of category" [ngValue]="cat.id">
+                          {{cat.name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3 tg-inputwithicon required">
+                    <label class="control-label">Type</label>
+                    <div class="tg-select form-control">
+                      <select name="type" [(ngModel)]="modeID" required>
+                        <option value="" disabled>Choose Type</option>
+                        <option *ngFor="let type of mode" [ngValue]="type.id">
+                          {{type.name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div
+                    class="form-group mb-3 input-icon input-icon-right required"
+                  >
+                    <label class="control-label">Price</label>
+
+                    <span class="input-euro left">
+                      <input
+                        class="form-control input-md"
+                        name="Price"
+                        disp
+                        placeholder=""
+                        [(ngModel)]="price"
+                        type="text"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        ondragstart="return false;"
+                        ondrop="return false;"
+                        required
+                      />
+                    </span>
+                  </div>
+                  <div class="form-group mb-3 tg-inputwithicon required">
+                    <label class="control-label">Country</label>
+                    <div class="tg-select form-control">
+                      <select
+                        name="country"
+                        [(ngModel)]="country"
+                        (ngModelChange)="getState(country)"
+                        required
+                      >
+                        <option value="" disabled>Choose your Country</option>
+                        <option
+                          *ngFor="let country of countryList"
+                          [ngValue]="country.country_name"
+                        >
+                          {{country.country_name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3 tg-inputwithicon required">
+                    <label class="control-label">State</label>
+                    <div class="tg-select form-control">
+                      <select
+                        name="state"
+                        [(ngModel)]="state"
+                        (ngModelChange)="getCity(state)"
+                        required
+                      >
+                        <option value="" disabled>Choose your State</option>
+                        <option
+                          *ngFor="let state of stateList"
+                          [ngValue]="state.state_name"
+                        >
+                          {{state.state_name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3 tg-inputwithicon required">
+                    <label class="control-label">City</label>
+                    <div class="tg-select form-control">
+                      <select name="city" [(ngModel)]="city" required>
+                        <option value="" disabled>Choose your City</option>
+                        <option
+                          *ngFor="let city of cityList"
+                          [ngValue]="city.city_name"
+                        >
+                          {{city.city_name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3 required">
+                    <label class="control-label">Phone</label>
+                    <input
+                      [(ngModel)]="phone"
+                      class="form-control input-md"
+                      name="Phone"
+                      placeholder=""
+                      type="text"
+                      onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                      ondragstart="return false;"
+                      ondrop="return false;"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-3 required">
+                    <label class="control-label">Upload Pics</label>
+                    <label class="tg-fileuploadlabel" for="tg-photogallery">
+                      <input
+                        id="file"
+                        type="file"
+                        class="form-control"
+                        multiple=""
+                        (change)="onImageAdd($event)"
+                        required
+                      />
+                      <br />
+                      <div class="container">
+                        <div class="row">
+                          <div
+                            class="col-sm-5 imgUp"
+                            *ngFor="let url of images"
+                          >
+                            <div
+                              class="imagePreview"
+                              style="background: url({{url}})"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <button
+                    class="btn btn-common"
+                    type="submit"
+                    [disabled]="!adForm.form.valid"
+                  >
+                    Post Ad
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

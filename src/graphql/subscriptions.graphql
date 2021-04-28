@@ -1,0 +1,682 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser {
+  onCreateUser {
+    id
+    name
+    email
+    address
+    phone
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    profileImage {
+      items {
+        id
+        name
+        userID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    name
+    email
+    address
+    phone
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    profileImage {
+      items {
+        id
+        name
+        userID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    name
+    email
+    address
+    phone
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    profileImage {
+      items {
+        id
+        name
+        userID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateCategory {
+  onCreateCategory {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateCategory {
+  onUpdateCategory {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteCategory {
+  onDeleteCategory {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateMode {
+  onCreateMode {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateMode {
+  onUpdateMode {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteMode {
+  onDeleteMode {
+    id
+    name
+    createdAt
+    updatedAt
+    owner
+    ads {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateAdvertisements {
+  onCreateAdvertisements {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    mode {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+    images {
+      items {
+        id
+        name
+        adID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateAdvertisements {
+  onUpdateAdvertisements {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    mode {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+    images {
+      items {
+        id
+        name
+        adID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteAdvertisements {
+  onDeleteAdvertisements {
+    id
+    title
+    description
+    categoryID
+    userID
+    country
+    state
+    city
+    phone
+    price
+    modeID
+    createdTime
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    mode {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+    images {
+      items {
+        id
+        name
+        adID
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreatePicture {
+  onCreatePicture {
+    id
+    name
+    adID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    ad {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnUpdatePicture {
+  onUpdatePicture {
+    id
+    name
+    adID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    ad {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnDeletePicture {
+  onDeletePicture {
+    id
+    name
+    adID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    ad {
+      items {
+        id
+        title
+        description
+        categoryID
+        userID
+        country
+        state
+        city
+        phone
+        price
+        modeID
+        createdTime
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnCreateProfilePicture {
+  onCreateProfilePicture {
+    id
+    name
+    userID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnUpdateProfilePicture {
+  onUpdateProfilePicture {
+    id
+    name
+    userID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnDeleteProfilePicture {
+  onDeleteProfilePicture {
+    id
+    name
+    userID
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    user {
+      items {
+        id
+        name
+        email
+        address
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    owner
+  }
+}

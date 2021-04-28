@@ -40,6 +40,9 @@
             "type": "attribute"
           }
         ]
+        // "no-unsafe-member-access": false,
+        // "no-unsafe-assignment": false,
+        // "no-unsafe-return": false
       }
     },
     {
