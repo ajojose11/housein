@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod --aot",
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -22,8 +22,6 @@
     "@aws-amplify/ui-angular": "^1.0.7",
     "aws-amplify": "^3.3.27",
     "jquery": "^3.6.0",
-    "ngx-owl-carousel": "^2.0.7",
-    "owl.carousel": "^2.3.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
