@@ -1,6 +1,6 @@
 {
   "auth": {
-    "houseinccda964f": {
+    "house109fc7eb": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -8,7 +8,7 @@
     }
   },
   "api": {
-    "housein": {
+    "house": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authhouseinccda964f"
+              "userPoolId": "authhouse109fc7eb"
             }
           },
           "additionalAuthenticationProviders": [
@@ -24,7 +24,7 @@
               "authenticationType": "API_KEY",
               "apiKeyConfig": {
                 "apiKeyExpirationDays": 365,
-                "description": "publicaccess"
+                "description": "public"
               }
             }
           ]
@@ -33,7 +33,7 @@
     }
   },
   "storage": {
-    "adPics": {
+    "adpics": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }

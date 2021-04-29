@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-housein-dev-02532-authRole",
-      "UnauthRoleArn": "arn:aws:iam::277417794935:role/amplify-housein-dev-02532-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::277417794935:role/amplify-housein-dev-02532-authRole",
+      "AuthRoleName": "amplify-house-dev-34742-authRole",
+      "UnauthRoleArn": "arn:aws:iam::277417794935:role/amplify-house-dev-34742-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::277417794935:role/amplify-house-dev-34742-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-housein-dev-02532-deployment",
-      "UnauthRoleName": "amplify-housein-dev-02532-unauthRole",
-      "StackName": "amplify-housein-dev-02532",
-      "StackId": "arn:aws:cloudformation:eu-west-1:277417794935:stack/amplify-housein-dev-02532/b3523450-a6e6-11eb-a9c2-0a2ae5e6e9bd",
-      "AmplifyAppId": "d1l9jmsvrfw81e"
+      "DeploymentBucketName": "amplify-house-dev-34742-deployment",
+      "UnauthRoleName": "amplify-house-dev-34742-unauthRole",
+      "StackName": "amplify-house-dev-34742",
+      "StackId": "arn:aws:cloudformation:eu-west-1:277417794935:stack/amplify-house-dev-34742/46e9e820-a895-11eb-bc9c-02cc5e796dcb",
+      "AmplifyAppId": "d2jsfkejh0y5b7"
     },
     "categories": {
       "auth": {
-        "houseinccda964f": {}
+        "house109fc7eb": {}
       }
     }
   }

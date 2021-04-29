@@ -1,10 +1,10 @@
 {
-  "AppSyncApiName": "housein",
+  "AppSyncApiName": "house",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authhouseinccda964f",
+      "authhouse109fc7eb",
       "Outputs.UserPoolId"
     ]
   }
