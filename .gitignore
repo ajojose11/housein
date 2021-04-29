@@ -162,8 +162,6 @@ build/
 dist/
 node_modules/
 aws-exports.js
-aws-exports.ts
-aws-exports-api.ts
 awsconfiguration.json
 amplifyconfiguration.json
 amplify-build-config.json
