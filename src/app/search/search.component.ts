@@ -17,8 +17,8 @@ export class SearchComponent implements OnInit {
     private graphql: APIService
   ) {
     this.activatedroute.params.subscribe((data) => {
-      let filter = { searchField: { contains: data.param.toLowerCase() } };
-      // let filter = { title: { contains: data.param.toLowerCase() } };
+      // let filter = { searchField: { contains: data.param.toLowerCase() } };
+      let filter = { title: { contains: data.param.toLowerCase() } };
       this.graphql.ListAdsHome(filter).then((res) => {
         this.ads = res.items;
         if (this.ads?.length == 0) {

@@ -146,7 +146,6 @@ export type ModelAdvertisementsFilterInput = {
   price?: ModelStringInput | null;
   modeID?: ModelIDInput | null;
   createdTime?: ModelStringInput | null;
-  searchField?: ModelStringInput | null;
   and?: Array<ModelAdvertisementsFilterInput | null> | null;
   or?: Array<ModelAdvertisementsFilterInput | null> | null;
   not?: ModelAdvertisementsFilterInput | null;
